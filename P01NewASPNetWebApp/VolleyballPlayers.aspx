@@ -20,12 +20,13 @@
 				<th>Last name</th>
 			</tr>
 			<%
-				for (int i = 0; i < PlayerList.Count(); i++)
+				foreach (var player in PlayerList)
 				{
-
+			%>
+			<%
 				}
 
-				%>
+			%>
 		</table>
 	</form>
 </body>
