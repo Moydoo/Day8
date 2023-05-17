@@ -40,10 +40,6 @@ namespace P01NewASPNetWebApp
 									FirstName = reader.GetString(1),
 									LastName = reader.GetString(2),
 								});
-								//Response.Write($"Id: {reader.GetInt32(0)}, " +
-								//	$"First name: {reader.GetString(1)}, " +
-								//	$"Last name: {reader.GetString(2)}");
-								//Response.Write("<br>");
 							}
 						}
 					}
