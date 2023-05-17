@@ -10,9 +10,15 @@ namespace P01NewASPNetWebApp
 {
 	public partial class VolleyballPlayers : System.Web.UI.Page
 	{
+
+		public string SampleString { get; set; }
+		public List<Player> PlayerList { get; set; }
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			string sampleString = "Hello";
+			SampleString = sampleString;
 			string connectionString = "Server=(localdb)\\mssqllocaldb;Database=VolleyballDatabase;Integrated Security=True;";
+
 
 			using (SqlConnection connection = new SqlConnection(connectionString))
 			{
@@ -28,8 +34,16 @@ namespace P01NewASPNetWebApp
 						{
 							while (reader.Read())
 							{
-								Response.Write($"Id: {reader.GetInt32(0)}, First name: {reader.GetString(1)}, Last name: {reader.GetString(2)}");
-								Response.Write("<br>");
+								PlayerList.Add(new Player()
+								{
+									Id = reader.GetInt32(0),
+									FirstName = reader.GetString(1),
+									LastName = reader.GetString(2),
+								});
+								//Response.Write($"Id: {reader.GetInt32(0)}, " +
+								//	$"First name: {reader.GetString(1)}, " +
+								//	$"Last name: {reader.GetString(2)}");
+								//Response.Write("<br>");
 							}
 						}
 					}

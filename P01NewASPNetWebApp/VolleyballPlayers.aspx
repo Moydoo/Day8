@@ -4,12 +4,29 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+	<title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-        </div>
-    </form>
+	<form id="form1" runat="server">
+		<p>Some text:</p>
+		<p><%Response.Write(SampleString); %></p>
+		<p><% =SampleString %></p>
+
+
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>First name</th>
+				<th>Last name</th>
+			</tr>
+			<%
+				for (int i = 0; i < PlayerList.Count(); i++)
+				{
+
+				}
+
+				%>
+		</table>
+	</form>
 </body>
 </html>
